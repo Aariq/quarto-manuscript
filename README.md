@@ -10,7 +10,7 @@ The goal of quarto-manuscript is to create a GitHub template for writing a colla
 
 - [ ] Use GitHub actions + GitHub pages to render and deploy an HTML version of the manuscript
 
-- [ ] Integrate [hypothes.is](https://hypothes.is/) for commenting on HTML version
+- [x] Integrate [hypothes.is](https://hypothes.is/) for commenting on HTML version
 
 - [ ] Render a .docx version with author affiliations and corresponding author info formatted legibly for submission to a journal
 

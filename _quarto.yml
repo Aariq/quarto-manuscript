@@ -10,7 +10,8 @@ execute:
   freeze: auto
 format:
   html:
-    include-after-body: build/plugins/hypothesis.html
     self-contained: true
+    comments:
+      hypothesis: true
   docx:
     toc: false
