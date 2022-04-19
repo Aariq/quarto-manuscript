@@ -3,12 +3,15 @@ title: "Full Title"
 shorttitle: "Short Title"
 author: 
   - name: "Eric R. Scott"
-    affilliation: "Department of Wildlife Ecology and Conservation, University of Florida, Gainesville, Florida 32611-0430"
+    institute: 
+      - UF_WEC
     email: "scottericr@gmail.com"
     correspondence: true
-  - name: "Emilio Bruna"
-    affiliation: "Department of Wildlife Ecology and Conservation, University of Florida, Gainesville, Florida 32611-0430"
-    email: "embruna@ufl.edu"
+  - name: "Author Two"
+    institute: 
+      - UF_WEC
+      - affiliation2
+    email: "email@university.edu"
     correspondence: false
 bibliography: references.bib
 keywords: |
@@ -17,6 +20,13 @@ execute:
   echo: false
   warning: false
   error: false
+institute: 
+  - UF_WEC: "Department of Wildlife Ecology and Conservation, University of Florida, Gainesville, Florida 32611-0430"
+  - affiliation2: "Department of Ecology, Evolution and Environmental Biology, Example University 123 Center Avenue, New York, New York 10027 USA"
+filters: 
+  - build/scholarly-metadata.lua
+  - build/author-info-blocks.lua
+  - quarto
 ---
 
 <!-- This is the format for text comments that will be ignored during renderings. Do not put R code in these comments because it will not be ignored. -->
