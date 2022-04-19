@@ -1,11 +1,13 @@
 project:
   title: "quarto-manuscript"
-  # output-dir: _output
+  execute-dir: project
 
 editor: visual
-
+filters:
+  - build/pagebreak.lua
 bibliography: docs/references.bib
-
+execute: 
+  freeze: auto
 format:
   html:
     include-after-body: build/plugins/hypothesis.html
