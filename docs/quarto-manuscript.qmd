@@ -1,0 +1,104 @@
+---
+title: "Full Title"
+shorttitle: "Short Title"
+author: 
+  - name: "Eric R. Scott"
+    affilliation: "University of Florida"
+  - name: "Emilio Bruna"
+    affiliation: "University of Florida"
+bibliography: references.bib
+keywords: |
+  keyword1; keyword2; keyword3
+execute: 
+  echo: false
+  warning: false
+  error: false
+---
+
+<!-- This is the format for text comments that will be ignored during renderings. Do not put R code in these comments because it will not be ignored. -->
+
+<!-- With the following code you can access and display values from the yml header above. -->
+
+```{r setup}
+#|include: false
+library(quarto)
+md <- quarto::quarto_inspect(here::here("docs", "quarto-manuscript.qmd"))$formats$html$metadata
+
+```
+
+Running title: `r md$shorttitle`
+
+Keywords: `r md$keywords`
+
+<!-- The actual document text starts here: -->
+
+\pagebreak
+
+# Abstract
+
+Abstract text.
+
+\pagebreak
+
+# Introduction
+
+Introduction with an in-text citation [@scottDelayedEffectsClimate2022].
+
+# Methods
+
+Methods text.
+
+# Results
+
+A reference to Table \@ref(tab:example-table).
+A reference to Figure .
+
+# Discussion
+
+# Acknowledgments
+
+We thank \_\_\_, \_\_\_, and \_\_\_ anonymous reviewers for helpful discussions and comments on the manuscript.
+Financial support was provided by the U.S.
+National Science Foundation (awards \_\_\_\_, and \_\_\_\_).
+The authors declare no conflicts of interest.
+
+# Author CRediT Statement
+
+<!-- https://casrai.org/credit/ -->
+
+# Data Availability Statement
+
+Data and R code used in this study are archived with Zenodo at <doi url>.
+
+\pagebreak
+
+# Tables
+
+```{r}
+library(pander)
+```
+
+```{r example-table, results='asis'}
+pandoc.table(
+  head(iris),
+  justify = c("right", "right", "right", "right", "left"),
+  full_width = FALSE,
+  caption = "(\\#tab:example-table) A table must include the table tag in order to cross-reference it correctly."
+)
+```
+
+# Figures
+
+```{r}
+#| label: example-figure,
+#| fig.cap: "A caption for an example figure. It can be long and span mutiple
+#|   lines like this."
+plot(cars)
+```
+
+# References
+
+<!-- The following line ensures the references appear here for the MS Word or HTML output files, rather than right at the end of the document (this will not work for PDF files):  -->
+
+::: {#refs}
+:::

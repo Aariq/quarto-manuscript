@@ -1,0 +1,14 @@
+project:
+  title: "quarto-manuscript"
+  # output-dir: _output
+
+editor: visual
+
+bibliography: docs/references.bib
+
+format:
+  html:
+    include-after-body: build/plugins/hypothesis.html
+    self-contained: true
+  docx:
+    toc: false
